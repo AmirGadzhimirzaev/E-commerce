@@ -29,3 +29,5 @@ def test_product_init_my(capsys):
 
     product_1.price = 1000
     assert product_1.price == 1000
+    assert str(product_1) == "a, 1000 руб. Остаток: 2 шт."
+    assert product_1 + product_1 == 4000
