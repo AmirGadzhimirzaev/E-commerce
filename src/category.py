@@ -6,13 +6,18 @@ class Category:
 
     category_count = 0
     product_count = 0
+    product_count_total = 0
 
     def __init__(self, name: str, description: str, products: list) -> None:
         self.name = name
         self.description = description
         self.__products = products
         Category.category_count += 1
-        Category.product_count = len(self.__products)
+        Category.product_count += len(products)
+        Category.product_count_total = sum([x.quantity for x in self.__products])
+
+    def __str__(self) -> str:
+        return f"{self.name}, количество продуктов: {Category.product_count_total} шт."
 
     def add_product(self, product: Product) -> None:
         self.__products.append(product)
@@ -22,5 +27,5 @@ class Category:
     def products(self) -> str:
         products_str = ""
         for prod in self.__products:
-            products_str += f"{prod.name}, {prod.price} руб. Остаток: {prod.quantity} шт.\n"
+            products_str += f"{prod}\n"
         return products_str

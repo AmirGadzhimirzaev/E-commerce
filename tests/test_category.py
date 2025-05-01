@@ -14,6 +14,7 @@ def test_category_init():
     category.add_product(test_product_2)
 
     assert category.products == "test_name_1, 5 руб. Остаток: 100 шт.\ntest_name_2, 5 руб. Остаток: 100 шт.\n"
+    assert str(category) == "a, количество продуктов: 100 шт."
 
 
 def test_category_counters():
@@ -24,4 +25,4 @@ def test_category_counters():
     Category("new", "category", [product_1, product_2])
 
     assert Category.category_count == current_category_count + 1
-    assert Category.product_count == current_product_count
+    assert Category.product_count == current_product_count + 2
