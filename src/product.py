@@ -10,11 +10,14 @@ class Product:
     def __str__(self) -> str:
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
-    def __add__(self, other: 'Product') -> float:
-        return self.price * self.quantity + other.price * other.quantity
+    def __add__(self, other: "Product") -> float:
+        if isinstance(other, self.__class__):
+            return self.price * self.quantity + other.price * other.quantity
+
+        raise TypeError
 
     @classmethod
-    def new_product(cls, product_dict: dict) -> 'Product':
+    def new_product(cls, product_dict: dict) -> "Product":
         return cls(product_dict["name"], product_dict["description"], product_dict["price"], product_dict["quantity"])
 
     @property
