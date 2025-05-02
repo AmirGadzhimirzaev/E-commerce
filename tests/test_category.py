@@ -1,3 +1,5 @@
+import pytest
+
 from src.category import Category
 from src.product import Product
 
@@ -15,6 +17,11 @@ def test_category_init():
 
     assert category.products == "test_name_1, 5 руб. Остаток: 100 шт.\ntest_name_2, 5 руб. Остаток: 100 шт.\n"
     assert str(category) == "a, количество продуктов: 100 шт."
+
+    with pytest.raises(TypeError) as er_info:
+        category.add_product("Not a product test")
+
+    assert issubclass(er_info.type, TypeError)
 
 
 def test_category_counters():
