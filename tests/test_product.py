@@ -1,3 +1,5 @@
+from itertools import product
+
 import pytest
 
 from src.product import Product
@@ -31,3 +33,8 @@ def test_product_init_my(capsys):
     assert product_1.price == 1000
     assert str(product_1) == "a, 1000 руб. Остаток: 2 шт."
     assert product_1 + product_1 == 4000
+
+
+def test_product_exemption(test_product):
+    with pytest.raises(ValueError):
+        Product("Samsung", "Smartphone with android OS", 50_000, 0)

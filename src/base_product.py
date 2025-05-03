@@ -6,15 +6,15 @@ class BaseProduct(ABC):
 
     @classmethod
     @abstractmethod  # pragma: no cover
-    def new_product(cls, product_dict: dict):
+    def new_product(cls, product_dict: dict):  # type: ignore
         pass
 
     @property
     @abstractmethod  # pragma: no cover
-    def price(self):
+    def price(self):  # type: ignore
         pass
 
     @price.setter
     @abstractmethod  # pragma: no cover
-    def price(self, price: float):
+    def price(self, price: float):  # type: ignore
         pass
