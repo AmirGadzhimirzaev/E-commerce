@@ -12,10 +12,15 @@
 
 ### Модули:
 
-1. **[templates.py](src/templates.py)** - Содержит классы для описания товара и группы товаров
+1. **[base_product.py](src/base_product.py)** - Абстрактный класс для Product
+2. **[category.py](src/category.py)** - Класс для описания категорий товара
+3. **[mixin_init.py](src/mixin_init.py)** - Класс-миксин для отладочной информации
+4. **[product.py](src/product.py)** - Класс представления товаров
+5. **[smartphone.py](src/smartphone.py)** - Класс представления Смартфонов
+6. **[lawn_grass.py](src/lawn_grass.py)** - Класс для представления типа 'Трава газонная'
 
 ## Тесты:
 
 1. Все функции в папке **src** протестированы
 2. Модули тестов в папке **tests**
-3. Отчет о тестировании: [tests_report](http://localhost:63342/E-commerce/htmlcov/index.html?_ijt=3ditdte8mdup8a8nnbab2j17d4&_ij_reload=RELOAD_ON_SAVE)
+3. Отчет о тестировании: [tests_report](htmlcov/index.html)
