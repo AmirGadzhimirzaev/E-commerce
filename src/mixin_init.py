@@ -1,6 +1,11 @@
 class MixinInit:
     """Класс-миксин для вывода отладочной информации"""
 
+    name: str
+    description: str
+    price: float
+    quantity: int
+
     def __init__(self) -> None:
         print(repr(self))
 

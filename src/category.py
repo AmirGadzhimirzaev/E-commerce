@@ -1,3 +1,5 @@
+from typing import Any
+
 from src.product import Product
 
 
@@ -32,3 +34,11 @@ class Category:
         for prod in self.__products:
             products_str += f"{prod}\n"
         return products_str
+
+    def middle_price(self) -> Any:
+        try:
+            avg_prod_price = sum([x.price for x in self.__products]) / len(self.__products)
+        except ZeroDivisionError:
+            return 0
+        else:
+            return round(avg_prod_price, 2)
